@@ -24,34 +24,57 @@ const removeParenth = function(str) {
 };
 
 const scoreScrabble = function(str) {
- const arrayOfLetters = str.split('');
+const scoreScrabble = function(str) {
+  
+  const arrayOfLetters = str.split('');
 let sum = 0//keep track of sum
 for(i = 0; i < arrayOfLetters.length; i++){
   switch (arrayOfLetters[i]) {
-    case 'a' || 'e' || 'i' || 'o' || 'u' || 'l' || 'n' || 'r' || 's' || 't':
+    case 'a':
+    case 'e':
+    case 'i':
+    case 'o':
+    case 'u':
+    case 'l':
+    case 'n':
+    case 'r':
+    case 's':
+    case 't':
       sum += 1;
       break;
-    case 'd' || 'g':
+    case 'd':
+    case 'g':
       sum += 2;
       break;
-    case 'b' || 'c' || 'm' || 'p':
+    case 'b': 
+    case 'c':
+    case 'm':
+    case 'p':
       sum += 3;
       break;
-    case 'f' || 'h' || 'v' || 'w' || 'y':
+    case 'f':
+    case 'h':
+    case 'v':
+    case 'w':
+    case 'y':
       sum += 4;
       break;
     case 'k':
       sum += 5;
       break;
-    case 'j' || 'x':
+    case 'j':
+    case 'x':
       sum += 8;
       break;
-    case 'q' || 'z':
+    case 'q':
+    case 'z':
       sum += 10;
       break;
   } 
 };
 
 return sum;//return sum
+};
+  
 };
 
