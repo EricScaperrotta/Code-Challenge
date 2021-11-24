@@ -24,8 +24,6 @@ const removeParenth = function(str) {
 };
 
 const scoreScrabble = function(str) {
-const scoreScrabble = function(str) {
-  
   const arrayOfLetters = str.split('');
 let sum = 0//keep track of sum
 for(i = 0; i < arrayOfLetters.length; i++){
@@ -74,7 +72,5 @@ for(i = 0; i < arrayOfLetters.length; i++){
 };
 
 return sum;//return sum
-};
-  
 };
 
