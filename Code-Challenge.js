@@ -12,15 +12,26 @@ const findFrequency = function(array) {
 };
 
 const isPalindrome = function(str) {
-  // your code here - don't forget to return a boolean!
+return str === str.split('').reverse().join('');
 };
 
 const largestPair = function(array) {
-  // your code here - don't forget to return a number!
-};
+  const arr = array;
+  let x = 0;
+  let y = 0;
+  let z = 0;
+  for(let i = 0; i < arr.length;i++){
+    x = arr[i];
+    y = arr[i + 1];
+    if(x * y > z){
+     z = x * y;
+    };
+  };
+ return z;
+}; 
 
 const removeParenth = function(str) {
-  // your code here - don't forget to return a string!
+return str.replace(/[\(\)']+/g,'')
 };
 
 const scoreScrabble = function(str) {
