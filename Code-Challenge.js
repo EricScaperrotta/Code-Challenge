@@ -31,7 +31,6 @@ const largestPair = function(array) {
 }; 
 
 const removeParenth = function(str) {
-return str.replace(/[\(\)']+/g,'')
 };
 
 const scoreScrabble = function(str) {
