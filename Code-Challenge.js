@@ -7,8 +7,33 @@ for(i = 0; i < array.length; i++){
 return sum;
 };
 
-const findFrequency = function(array) {
-  // your code here - don't forget to return an object!
+const findFrequency = (arrayOfLetters) => {
+  const frequencyObject = {};
+  arrayOfLetters.forEach((letter) => {
+    if(frequencyObject[letter]){
+      frequencyObject[letter] += 1
+    } else {
+      frequencyObject[letter] = 1
+    }
+  });
+  let highestFrequency;
+  let lowestFrequency;
+  for(const letter in frequencyObject){
+    if(!highestFrequency){
+      highestFrequency = letter
+    }
+    if(!lowestFrequency){
+      lowestFrequency = letter
+    }
+    const currentLetterFrequency = frequencyObject[letter]
+    if(currentLetterFrequency > frequencyObject[highestFrequency]){
+      highestFrequency = letter
+    }
+    if(currentLetterFrequency < frequencyObject[lowestFrequency]){
+      lowestFrequency = letter
+    }
+  }
+  return {most: highestFrequency, least: lowestFrequency}
 };
 
 const isPalindrome = function(str) {
@@ -30,7 +55,16 @@ const largestPair = function(array) {
  return z;
 }; 
 
-const removeParenth = function(str) {
+const removeParenth = (input) => {
+  const inputArray=input.split('');
+  const indexOfOpening = inputArray.indexOf('(');
+  const indexOfClosing = inputArray.indexOf(')');
+ 
+  const numberOfLettersToRemove = indexOfClosing - indexOfOpening + 1
+ 
+  inputArray.splice(indexOfOpening, numberOfLettersToRemove)
+ 
+  return inputArray.join('')
 };
 
 const scoreScrabble = function(str) {
@@ -78,7 +112,7 @@ for(i = 0; i < arrayOfLetters.length; i++){
     case 'z':
       sum += 10;
       break;
-  } 
+  }; 
 };
 
 return sum;//return sum
